@@ -1,0 +1,40 @@
+package com.domain.dto;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class ResponseData<T> {
+
+    private boolean status;
+    private List<String> message = new ArrayList<>();
+
+    @JsonProperty("datas")
+    private T payload;
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public List<String> getMessage() {
+        return message;
+    }
+
+    public void setMessage(List<String> message) {
+        this.message = message;
+    }
+
+    public T getPayload() {
+        return payload;
+    }
+
+    public void setPayload(T datas) {
+        this.payload = datas;
+    }
+
+}
